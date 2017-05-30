@@ -1,0 +1,30 @@
+{
+  "name": "diffset",
+  "version": "0.0.0",
+  "description": "Progressively calculate and store the differences between the previous added values.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/observing/diffset.git"
+  },
+  "keywords": [
+    "diff",
+    "array",
+    "number",
+    "set",
+    "values"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/observing/diffset/issues"
+  },
+  "homepage": "https://github.com/observing/diffset#readme",
+  "devDependencies": {
+    "assume": "1.5.1",
+    "mocha": "3.4.2"
+  }
+}
