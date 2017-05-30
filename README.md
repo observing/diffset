@@ -1,5 +1,7 @@
 # diffset
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/observing/diffset.svg)](https://greenkeeper.io/)
+
 A small set numbers where only the diff of the previously added value is stored.
 So if your previous value was 120 and you store 123 it will only store the
 number 3.
