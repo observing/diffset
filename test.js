@@ -1,7 +1,5 @@
-'use strict';
-
-var assume = require('assume')
-  , Diffset = require('./');
+import assume from 'assume';
+import Diffset from './';
 
 describe('diffset', function () {
   it('is a function', function () {
@@ -62,14 +60,26 @@ describe('diffset', function () {
     });
   });
 
-  describe('#flush', function () {
-    var ds = new Diffset();
+  describe('#extract', function () {
+    it('extracts the data', function () {
+      var ds = new Diffset();
 
-    ds.push(10, 12, 39, 40, 42, 40, 25);
+      ds.push(10, 12, 39, 40, 42, 40, 25);
 
-    var data = ds.flush();
+      var data = ds.extract();
 
-    assume(data).deep.equals([10, 2, 27, 1, 2, -2, -15]);
-    assume(ds.set).deep.equals([]);
+      assume(data).deep.equals([10, 2, 27, 1, 2, -2, -15]);
+      assume(ds.set).deep.equals([]);
+    });
+
+    it('resets the internal set', function () {
+      var ds = new Diffset();
+
+      ds.push(10, 12, 39, 40, 42, 40, 25);
+      assume(ds.set.length).equals(7);
+
+      ds.extract();
+      assume(ds.set.length).equals(0);
+    });
   });
 });
